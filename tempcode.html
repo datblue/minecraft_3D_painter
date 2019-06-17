@@ -1,0 +1,65 @@
+//upload headRightOverlay
+			for(var i=0; i<64;i++){
+				var mygeometry = model.headRightOverlay.children[i].geometry;
+				var uvs = mygeometry.faceVertexUvs[ 0 ];
+				var xpos = i%8;
+				var ypos = Math.floor(i/8);
+
+				uvs[ 0 ][ 0 ].set( xpos*r, 1 - ypos*r - s);
+				uvs[ 0 ][ 1 ].set( xpos*r, 1-r  - ypos*r - s);
+				uvs[ 0 ][ 2 ].set( r + xpos*r, 1  - ypos*r - s);
+				uvs[ 1 ][ 0 ].set( xpos*r, 1-r  - ypos*r - s);
+				uvs[ 1 ][ 1 ].set( r + xpos*r, 1-r - ypos*r - s);
+				uvs[ 1 ][ 2 ].set( r + xpos*r, 1 - ypos*r - s);
+
+				model.headRightOverlay.children[i].material = material;
+			}			
+			//upload headFrontOverlay
+			for(var i=0; i<64;i++){
+				var mygeometry = model.headFrontOverlay.children[i].geometry;
+				var uvs = mygeometry.faceVertexUvs[ 0 ];
+				var xpos = i%8;
+				var ypos = Math.floor(i/8);
+
+				uvs[ 0 ][ 0 ].set(s+ xpos*r, 1 - ypos*r - s);
+				uvs[ 0 ][ 1 ].set(s+ xpos*r, 1-r  - ypos*r - s);
+				uvs[ 0 ][ 2 ].set(s+ r + xpos*r, 1  - ypos*r - s);
+				uvs[ 1 ][ 0 ].set(s+ xpos*r, 1-r  - ypos*r - s);
+				uvs[ 1 ][ 1 ].set(s+ r + xpos*r, 1-r - ypos*r - s);
+				uvs[ 1 ][ 2 ].set(s+ r + xpos*r, 1 - ypos*r - s);
+
+				model.headFrontOverlay.children[i].material = material;
+			}	
+			//upload headLeftOverlay
+			for(var i=0; i<64;i++){
+				var mygeometry = model.headLeftOverlay.children[i].geometry;
+				var uvs = mygeometry.faceVertexUvs[ 0 ];
+				var xpos = i%8;
+				var ypos = Math.floor(i/8);
+
+				uvs[ 0 ][ 0 ].set(2*s+ xpos*r, 1 - ypos*r - s);
+				uvs[ 0 ][ 1 ].set(2*s+ xpos*r, 1-r  - ypos*r - s);
+				uvs[ 0 ][ 2 ].set(2*s+ r + xpos*r, 1  - ypos*r - s);
+				uvs[ 1 ][ 0 ].set(2*s+ xpos*r, 1-r  - ypos*r - s);
+				uvs[ 1 ][ 1 ].set(2*s+ r + xpos*r, 1-r - ypos*r - s);
+				uvs[ 1 ][ 2 ].set(2*s+ r + xpos*r, 1 - ypos*r - s);
+
+				model.headLeftOverlay.children[i].material = material;
+			}	
+			//upload headBackOverlay
+
+			for(var i=0; i<64;i++){
+				var mygeometry = model.headBackOverlay.children[i].geometry;
+				var uvs = mygeometry.faceVertexUvs[ 0 ];
+				var xpos = i%8;
+				var ypos = Math.floor(i/8);
+
+				uvs[ 0 ][ 0 ].set(3*s+ xpos*r, 1 - ypos*r - s);
+				uvs[ 0 ][ 1 ].set(3*s+ xpos*r, 1-r  - ypos*r - s);
+				uvs[ 0 ][ 2 ].set(3*s+ r + xpos*r, 1  - ypos*r - s);
+				uvs[ 1 ][ 0 ].set(3*s+ xpos*r, 1-r  - ypos*r - s);
+				uvs[ 1 ][ 1 ].set(3*s+ r + xpos*r, 1-r - ypos*r - s);
+				uvs[ 1 ][ 2 ].set(3*s+ r + xpos*r, 1 - ypos*r - s);
+
+				model.headBackOverlay.children[i].material = material;
+			}
